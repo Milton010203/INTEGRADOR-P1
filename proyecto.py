@@ -1,5 +1,6 @@
 import random
 import time
+random.seed(42)
 
 
 # Lista para analizar en caso de una lista ordenada
@@ -10,7 +11,7 @@ for i in range (1, 101):
 # Lista para analizar en caso de una lista desordenada
 lista2 = []
 for i in range (1, 101):
-    aleatorio = random.randint(0, 9)
+    aleatorio = random.randint(0, 100)
     lista2.append(aleatorio)
 
 # Busqueda lineal
@@ -20,13 +21,13 @@ def buscar_var_lineal(lista, numero):
     while flag == False:
         try:
             if lista[ct] == numero:
-                print("Se encontro el numero!")
+                # Se encontro el numero!
                 fin = (time.time()) * 1000
                 return fin
             else:
                 ct += 1
         except IndexError:
-            print("El numero no esta en la lista!")
+            # El numero no esta en la lista!
             fin = (time.time()) * 1000
             return fin
 
@@ -41,14 +42,14 @@ def buscar_var_bin(lista, numero):
         mitad = lista[medio]
 
         if mitad == numero:
-            print("Se encontro el numero!")
+            # Se encontro el numero!
             fin = (time.time()) * 1000
             return fin
         elif mitad < numero:
             izquierda = medio + 1
         else:
             derecha = medio - 1
-    print("No se encontro el numero en la lista!")
+    # El numero no esta en la lista!
     fin = (time.time()) * 1000
     return fin
 
@@ -57,7 +58,7 @@ def buscar_var_bin(lista, numero):
 num = int(input("Ingrese el numero que desea buscar: "))
 variables_scan = [num]
 producto = num
-for i in range(0, 4):
+for i in range(0, 5):
     producto = producto + 10
     variables_scan.append(producto)
 print(f"variables a escanear: {variables_scan}")
@@ -109,7 +110,8 @@ for i in range(len(variables_scan)):
 
     # Lista desordenada
     valor_inicio4 = (time.time()) * 1000
-    valor_final4 = buscar_var_bin(lista2, variables_scan[i])
+    lista_ordenada = sorted(lista2)
+    valor_final4 = buscar_var_bin(lista_ordenada, variables_scan[i])
     tiempo_de_ejecucion_bin_des = valor_final4 - valor_inicio4
     resultados.append({
         "numero_buscado": variables_scan[i],
@@ -117,11 +119,6 @@ for i in range(len(variables_scan)):
         "orden": "desordenada",
         "tiempo": tiempo_de_ejecucion_bin_des
     })
-
-    valor_inicio4 = (time.time()) * 1000
-    lista2.sort()
-    valor_final4 = buscar_var_bin(lista2, variables_scan[i])
-    tiempo_de_ejecucion_bi_des = valor_final4 - valor_inicio4
 
 # Inicializamos las listas vacías
 lineal_ordenada = []
