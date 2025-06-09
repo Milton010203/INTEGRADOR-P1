@@ -16,9 +16,8 @@ for i in range (1, 101):
 
 # Busqueda lineal
 def buscar_var_lineal(lista, numero):
-    flag = False # Se define una bandera para indicar cuando el ciclo debe cortar sin la necesidad de un break
     ct = 0 # Variable con la que el programa va a iterar la lista
-    while flag == False:
+    while ct >= 0:
         try:
             if lista[ct] == numero:
                 # Se encontro el numero!
@@ -126,7 +125,7 @@ lineal_desordenada = []
 binaria_ordenada = []
 binaria_desordenada = []
 
-# Clasificamos los resultados en una sola pasada
+# Clasificamos los resultados
 for r in resultados:
     if r["metodo"] == "lineal" and r["orden"] == "ordenada":
         lineal_ordenada.append(r)
