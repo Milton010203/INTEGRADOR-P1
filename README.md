@@ -11,6 +11,7 @@ Instrucciones de uso del archivo "proyecto.py":
 ------------------------------------------------------------------------------------
 En este archivo se puede contemplar la diferencia en el tiempo de ejecucion de scripts en una maquina, dejando en claro que método de busqueda resulta mas eficiente ante distintos tipos de datos. Esta diferencia entra en accion cuando se procesan grandes cantidades de datos, no solo ahorrando tiempo si no tambien ahorrando memoria y CPU, evitando perjudicar el hardware de la maquina y permitiendo trabajar de forma segura sin riesgo a bugs o cuelgues en medio de ejecuciones.
 
+Video de explicacion: https://www.youtube.com/watch?v=gfT-4SRba7s
 Catedra de PROGRAMACION 1
 Python: v3.13.0
 
